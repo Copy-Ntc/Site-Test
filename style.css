@@ -1,58 +1,36 @@
 /* Estilos Gerais para o Corpo da Página */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
+    /* NOVO BACKGROUND DARK COM GRADIENTE */
+    background: linear-gradient(to bottom, #1a0333, #3a0050, #000000); /* Roxo escuro, roxo mais claro, preto */
+    color: #e0e0e0; /* Cor do texto padrão (cinza claro) para fundo escuro */
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 20px;
     box-sizing: border-box;
 }
-
-/* Estilos para o Cabeçalho (Seu Nome e Descrição) */
-header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-}
-
-header h1 {
-    color: #9900ff;
-    margin-bottom: 10px;
-    font-size: 2.5em;
-}
-
-header p {
-    color: rgb(0, 0, 0);
-    margin: 0;
-    font-size: 1.1em;
-    line-height: 1.6;
-}
-
 /* Estilos para a Seção de Links */
 .links {
     width: 100%;
-    max-width: 250px;
-    background-color: #ffffff;
+    max-width: 250px; /* Largura máxima para a seção de links */
+   background: linear-gradient(to right, #000000 , #630699);
+/* Metade azul, metade amarelo, sem transição no meio (corta exatamente no 50%) */ 
     padding: 50px;
     border-radius: 60px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-bottom: 40px; /* Adicionado para separar dos próximos elementos */
 }
 
 .links h2 {
-    color: #555;
+    color: #ffffff;
     margin-bottom: 25px;
     font-size: 1.8em;
+    font-weight: bold;
 }
 
 .links ul {
@@ -68,19 +46,19 @@ header p {
 .links a {
     display: block;
     padding: 15px 20px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #000000; /* Cor de fundo dos botões de link */
+    color: #ffffff;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 100px;
     font-weight: bold;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
-    border: 2px solid #007bff;
+    border: 2px solid #670faf;
 
     /* Propriedades para o efeito Fade-In dos links */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    opacity: 0; /* Começa totalmente transparente (invisível) */
+    transform: translateY(20px); /* Move o link 20px para baixo */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transição suave */
 }
 
 /* Classe que o JavaScript vai adicionar para mostrar o link */
@@ -90,8 +68,8 @@ header p {
 }
 
 .links a:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #9900ff;
+    border-color: #9900ff;
 }
 
 /* Estilos para os ícones dentro dos links */
@@ -100,88 +78,150 @@ header p {
     font-size: 1.2em;
 }
 
-/* Estilos para o Rodapé */
 footer {
     text-align: center;
     margin-top: 40px;
     font-size: 0.9em;
-    color: #777;
+    color: #888; /* Cinza médio para o rodapé */
     padding: 10px;
+    width: 100%;
 }
 
-/* --- NOVOS ESTILOS PARA O PERSONAGEM FIXO E BALÃO --- */
+/* --- ESTILOS PARA O PERSONAGEM FIXO E BALÃO --- */
+
 
 .fixed-character-container {
-    position: fixed; /* Fixa o elemento na tela, não rola com o conteúdo */
-    bottom: 20px; /* Distância da parte inferior da tela */
-    right: 20px; /* Distância da parte direita da tela */
-    z-index: 1000; /* Garante que ele fique acima de todos os outros elementos */
-    display: flex; /* Para alinhar a imagem e o balão */
-    align-items: flex-end; /* Alinha os itens pela base (personagem e balão) */
-    gap: 15px; /* Espaçamento entre o personagem e o balão */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+
+    /* AQUI É ONDE VOCÊ DEVE ADICIONAR A ANIMAÇÃO */
+    animation: floatAnimation 3s ease-in-out infinite; /* Aplica a animação ao container */
 }
 
+/* Remova a animação da imagem individual, se ela estava lá */
 .character-image {
-    width: 120px; /* Tamanho do personagem (ajuste conforme suas imagens) */
+    width: 120px;
     height: auto;
-    border-radius: 10px; /* Se quiser cantos arredondados para o busto */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacá-lo */
-    /* Adicione a animação de flutuação aqui, se desejar, como fizemos para profile-img */
-    animation: floatAnimation 3s ease-in-out infinite; /* Aplica a animação */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Remova a linha abaixo se ela estiver aqui, pois a animação será no container: */
+    /* animation: floatAnimation 3s ease-in-out infinite; */
 }
 
-/* Animação de flutuação (agora aplicada ao character-image) */
+/* O @keyframes floatAnimation deve permanecer o mesmo, em algum lugar no seu CSS */
 @keyframes floatAnimation {
     0% {
-        transform: translateY(0px); /* Começa na posição original */
+        transform: translateY(0px);
     }
     50% {
         transform: translateY(-10px); /* Move 10px para cima */
     }
     100% {
-        transform: translateY(0px); /* Retorna à posição original */
+        transform: translateY(0px);
     }
 }
 
-
+/* O resto dos estilos do speech-bubble e media queries permanecem como estão */
 /* Estilos para o balão de fala */
 .speech-bubble {
-    position: relative; /* Relativo ao .fixed-character-container */
-    background-color: #fff; /* Fundo branco do balão */
-    color: rgb(51, 51, 51); /* Cor do texto do balão */
+    position: relative;
+    background-color: #1a1a1a; /* Fundo do balão (quase preto) */
+    color: #e0e0e0; /* Cor do texto do balão (cinza claro) */
     padding: 15px 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 250px; /* Largura máxima do balão */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra um pouco mais forte */
+    max-width: 250px;
     text-align: left;
     font-size: 0.95em;
     line-height: 1.4;
-    opacity: 0; /* Começa invisível para aparecer com JS */
-    transition: opacity 0.5s ease-in-out; /* Transição suave */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
-
-/* A cauda do balão - Apontando para o personagem */
-.speech-bubble::before {
-    content: '';
-    position: absolute;
-    bottom: 10px; /* Posição vertical da cauda */
-    left: -10px; /* Coloca a cauda à esquerda do balão */
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #fff; /* Cor da cauda igual ao fundo do balão */
-}
-
 /* Estilo para mostrar o balão com JS */
 .speech-bubble.show-bubble {
     opacity: 1;
 }
 
-/* --- Media Queries para Responsividade --- */
+.contact-form-section {
+    width: 100%;
+    max-width: 600px;
+    background-color: #121212; /* Fundo preto quase total */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra mais intensa */
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.contact-form-section h2 {
+    color: #e0e0e0; /* Título em cinza claro */
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #b0b0b0; /* Labels em cinza claro */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    background-color: #2a2a2a; /* Fundo dos inputs um pouco mais claro que o container */
+    border: 1px solid #444; /* Borda mais clara */
+    color: #e0e0e0; /* Texto dos inputs em cinza claro */
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+/* Cor do placeholder (texto que aparece antes de digitar) */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #888;
+}
+
+.contact-form-section button[type="submit"] {
+    background-color: #040138; /* Botão de envio rosa vibrante */
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form-section button[type="submit"]:hover {
+    background-color: #0b2680; /* Rosa mais claro no hover */
+}
+
+/* Mensagem de erro permanece vermelha para destaque */
+.error-message {
+    color: #ff6666; /* Um vermelho um pouco mais suave para dark mode */
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none;
+}
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
 
 /* Estilos para telas menores que 768px (tablets e celulares) */
 @media (max-width: 768px) {
+    body {
+        padding: 15px; /* Ajusta o padding geral do corpo em telas menores */
+    }
     header {
         margin-bottom: 30px;
         padding: 15px;
@@ -213,10 +253,6 @@ footer {
         margin-right: 8px;
     }
 
-    /* Removido .profile-img aqui também */
-
-    /* Removido .illustration-section e p aqui */
-
     footer {
         margin-top: 30px;
         font-size: 0.8em;
@@ -246,20 +282,27 @@ footer {
         border-top: 8px solid transparent;
         border-bottom: 8px solid transparent;
     }
+
+    /* Ajustes para o formulário em telas menores */
+    .contact-form-section {
+        padding: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 }
 
 /* Estilos para telas ainda menores, como celulares (max-width: 480px) */
 @media (max-width: 480px) {
     body {
-        padding: 15px;
+        padding: 10px; /* Reduz ainda mais o padding geral do corpo */
     }
-
     header {
         border-radius: 5px;
     }
 
     .links {
         border-radius: 5px;
+        padding: 30px; /* Ajuste no padding para telas muito pequenas */
     }
 
     .links a {
@@ -269,10 +312,10 @@ footer {
 
     /* Media Query para o Personagem Fixo e Balão em Telas Muito Pequenas */
     .fixed-character-container {
-        flex-direction: column;
-        align-items: center;
-        right: 50%;
-        transform: translateX(50%);
+        flex-direction: column; /* Empilha a imagem e o balão */
+        align-items: center; /* Centraliza horizontalmente */
+        right: 50%; /* Move para o centro */
+        transform: translateX(50%); /* Ajusta o centro */
         bottom: 10px;
         gap: 5px;
     }
@@ -282,17 +325,23 @@ footer {
     }
 
     .speech-bubble {
-        max-width: calc(100vw - 40px);
-        text-align: center;
+        max-width: calc(100vw - 40px); /* Ocupa quase toda a largura da tela */
+        text-align: center; /* Centraliza o texto em celulares */
     }
 
     .speech-bubble::before {
-        top: -10px;
-        left: 50%;
+        /* Ajusta a cauda para apontar para cima ou some */
+        top: -10px; /* A cauda aponta para cima */
+        left: 50%; /* Centraliza a cauda */
         transform: translateX(-50%);
-        border-top: 10px solid #fff;
+        border-top: 10px solid #fff; /* Nova direção da cauda */
         border-bottom: 0;
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
+    }
+
+    /* Ajustes para o formulário em telas muito pequenas */
+    .contact-form-section {
+        padding: 15px;
     }
 }

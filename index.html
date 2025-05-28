@@ -9,32 +9,45 @@
 </head>
 <body>
     <div class="fixed-character-container">
-       <img src="imagens/neutro.png" alt="Seu Personagem" class="character-image" id="characterImage">
+        <img src="imagens/personagem_neutro.png" alt="Seu Personagem" class="character-image" id="characterImage">
         <div class="speech-bubble" id="speechBubble">
             Olá! Seja bem-vindo(a) ao meu portfólio!
         </div>
     </div>
-
-    <header>
-        <h1>Zé/Copy</h1>
-        <p>Universitário fudido, Desempregado e Procastinador.</p>
-    </header>
 
     <main>
         <section class="links">
             <h2>Meus Links</h2>
             <ul>
                 <li><a href="https://www.tiktok.com/@escooy" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
-                <li><a href="https://www.youtube.com/seu-canal" target="_blank"><i class="fab fa-youtube"></i> Youtube</a></li>
-                <li><a href="https://www.instagram.com/juniorntc_/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-                <li><a href="https://seulinkdoprojetoia.com" target="_blank"><i class="fa-solid fa-robot"></i> IA</a></li>
-                <li><a href="#" target="_blank"><i class="fas fa-code"></i> Seu Projeto Incrível 2</a></li>
+                <li><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="imagens/Urso.mp4" target="_blank"><i class="fa-solid fa-robot"></i> Projeto de IA</a></li>
             </ul>
         </section>
+
+        <section class="contact-form-section">
+            <h2>Entre em Contato</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+
     </main>
 
     <footer>
-        <p>© 2025. José Leandro. Todos os direitos reservados.</p>
+        <p>&copy; 2025. Zé/Copy. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
