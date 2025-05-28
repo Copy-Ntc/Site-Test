@@ -1,0 +1,206 @@
+/* Estilos Gerais para o Corpo da Página */
+body {
+    font-family: 'Arial', sans-serif; /* Define a fonte principal */
+    background-color: #f0f2f5; /* Cor de fundo suave */
+    color: #333; /* Cor do texto padrão */
+    margin: 0; /* Remove margem padrão do navegador */
+    display: flex; /* Habilita flexbox para centralizar conteúdo */
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
+    justify-content: center; /* Centraliza verticalmente */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho */
+}
+
+/* Estilos para o Cabeçalho (Seu Nome e Descrição) */
+header {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 40px; /* Espaçamento abaixo do cabeçalho */
+    padding: 20px;
+    background-color: #fff; /* Fundo branco para o cabeçalho */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 600px; /* Largura máxima para o cabeçalho */
+    width: 100%; /* Ocupa 100% da largura disponível até o max-width */
+}
+
+header h1 {
+    color: #9900ff; /* Cor azul para o seu nome */
+    margin-bottom: 10px; /* Espaçamento abaixo do nome */
+    font-size: 2.5em; /* Tamanho da fonte do nome */
+}
+
+header p {
+    color: rgb(0, 0, 0); /* Cor vermelho para a descrição */
+    margin: 0; /* Remove margem padrão */
+    font-size: 1.1em; /* Tamanho da fonte da descrição */
+    line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+/* Estilos para a Seção de Links */
+.links {
+    width: 100%;
+    max-width: 250px; /* Largura máxima para a seção de links */
+    background-color: #ffffff; /* Fundo branco */
+    padding: 50px;
+    border-radius: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto */
+}
+
+.links h2 {
+    color: #555; /* Cor para o título "Meus Links" */
+    margin-bottom: 25px; /* Espaçamento abaixo do título */
+    font-size: 1.8em;
+}
+
+.links ul {
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0; /* Remove o padding padrão da lista */
+    margin: 0; /* Remove a margem padrão da lista */
+}
+
+.links li {
+    margin-bottom: 15px; /* Espaçamento entre os itens da lista */
+}
+
+.links a {
+    display: block; /* Faz o link ocupar toda a largura disponível */
+    padding: 15px 20px; /* Espaçamento interno dos links */
+    background-color: #007bff; /* Cor de fundo dos botões de link */
+    color: #fff; /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    border-radius: 8px; /* Cantos arredondados */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 1.1em;
+    transition: background-color 0.3s ease; /* Transição suave na mudança de cor */
+    border: 2px solid #007bff; /* Borda para o botão */
+
+    /* --- Novas propriedades para o efeito Fade-In --- */
+    /* Elas devem ser adicionadas APENAS UMA VEZ aqui */
+    opacity: 0; /* Começa totalmente transparente (invisível) */
+    transform: translateY(20px); /* Move o link 20px para baixo */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transição suave para opacidade e posição */
+    /* ----------------------------------------------- */
+}
+/* Uma classe que o JavaScript vai adicionar para mostrar o link */
+.links a.fade-in {
+    opacity: 1; /* Torna o link totalmente visível */
+    transform: translateY(0); /* Retorna o link para a posição original */
+}
+
+.links a:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+    border-color: #0056b3; /* Cor da borda ao passar o mouse */
+}
+
+/* Estilos para o Rodapé */
+footer {
+    text-align: center;
+    margin-top: 40px; /* Espaçamento acima do rodapé */
+    font-size: 0.9em; /* Tamanho da fonte do rodapé */
+    color: #777; /* Cor do texto do rodapé */
+    padding: 10px;
+}
+/* Estilos para os ícones dentro dos links */
+.links a i {
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+    font-size: 1.2em; /* Tamanho do ícone um pouco maior */
+}
+/* Estilos para a imagem de perfil */
+.profile-img {
+    width: 150px; /* Largura da imagem */
+    height: 150px; /* Altura da imagem */
+    border-radius: 50%; /* Faz a imagem ser um círculo */
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+    margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+    border: 4px solid #8110dd; /* Borda ao redor da imagem */
+    box-shadow: 0 4px 100px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+    animation: floatAnimation 3s ease-in-out infinite; /* Aplica a animação */
+}
+/* Definindo a animação de flutuação */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px); /* Começa na posição original */
+    }
+    50% {
+        transform: translateY(-10px); /* Move 10px para cima */
+    }
+    100% {
+        transform: translateY(0px); /* Retorna à posição original */
+    }
+}
+/* Estilos para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    header {
+        margin-bottom: 30px; /* Reduz a margem inferior do cabeçalho */
+        padding: 15px; /* Reduz o padding do cabeçalho */
+    }
+
+    header h1 {
+        font-size: 2em; /* Diminui um pouco o tamanho do nome */
+    }
+
+    header p {
+        font-size: 1em; /* Diminui um pouco o tamanho da descrição */
+    }
+
+    .links {
+        padding: 20px; /* Reduz o padding da seção de links */
+    }
+
+    .links h2 {
+        font-size: 1.5em; /* Diminui o tamanho do título "Meus Links" */
+        margin-bottom: 20px;
+    }
+
+    .links a {
+        padding: 12px 15px; /* Ajusta o padding dos botões de link */
+        font-size: 1em; /* Diminui o tamanho da fonte dos links */
+    }
+
+    .links a i {
+        margin-right: 8px; /* Ajusta o espaçamento do ícone */
+    }
+
+    .profile-img {
+        width: 120px; /* Diminui o tamanho da imagem de perfil */
+        height: 120px;
+        margin-bottom: 15px;
+    }
+
+    .illustration-section {
+        margin-top: 30px; /* Reduz a margem superior da ilustração */
+        padding: 20px;
+    }
+
+    .illustration-section p {
+        font-size: 0.95em; /* Diminui um pouco o texto da ilustração */
+    }
+
+    footer {
+        margin-top: 30px; /* Reduz a margem superior do rodapé */
+        font-size: 0.8em; /* Diminui o tamanho do texto do rodapé */
+    }
+}
+
+/* Estilos para telas ainda menores, como celulares (max-width: 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 15px; /* Reduz o padding geral do corpo */
+    }
+
+    header {
+        border-radius: 5px; /* Deixa os cantos menos arredondados */
+    }
+
+    .links {
+        border-radius: 5px;
+    }
+
+    .links a {
+        font-size: 0.95em; /* Mais um ajuste fino no tamanho da fonte dos links */
+        padding: 10px 12px;
+    }
+}   
